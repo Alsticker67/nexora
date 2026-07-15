@@ -13,24 +13,18 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "YOUR_NAME | SAP Integration Developer",
-    template: "%s | YOUR_NAME",
-  },
-
+  title: "Bhairav Singh | SAP Integration Developer",
   description:
-    "Portfolio showcasing SAP Integration Suite (CPI), SAP PI/PO, SAP BTP, REST APIs, SOAP Services, Groovy scripting, and enterprise integration projects.",
+    "Portfolio of Bhairav Singh - SAP Integration Suite (CPI), SAP PI/PO, SAP BTP, REST APIs, Groovy, Enterprise Integration Developer.",
 
   icons: {
     icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
   },
 
   openGraph: {
-    title: "YOUR_NAME | SAP Integration Developer",
+    title: "Bhairav Singh | SAP Integration Developer",
     description:
-      "SAP Integration Developer Portfolio",
+      "SAP Integration Developer Portfolio built with Next.js, TypeScript and Tailwind CSS.",
     images: ["/og-image.png"],
   },
 };

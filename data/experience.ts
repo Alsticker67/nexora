@@ -1,9 +1,9 @@
 export const experience = [
   {
-    company: "YOUR_COMPANY",
-    role: "Application Development Analyst",
+    company: "IBM India Pvt. Ltd.",
+    role: "Application Developer",
     duration: "Jul 2023 - Present",
-    location: "YOUR_LOCATION",
+    location: "Remote",
 
     description:
       "Developing enterprise integration solutions using SAP Integration Suite, SAP PI/PO, APIs and cloud technologies.",
@@ -26,9 +26,9 @@ export const experience = [
   },
 
   {
-    company: "SAP Learning",
-    role: "Integration Developer",
-    duration: "2022 - 2023",
+    company: "Rising Arjun Technologies Pvt. Ltd.",
+    role: "Full Stack Developer",
+    duration: "2021 - 2022",
     location: "Remote",
 
     description:

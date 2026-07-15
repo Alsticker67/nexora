@@ -7,7 +7,7 @@ export const profile = {
   tagline:
     "Passionate about building seamless enterprise integrations using SAP Integration Suite (CPI), SAP PI/PO, SAP BTP, REST APIs, SOAP services, and cloud technologies.",
 
-  resume: "/resume/Bhairav_Singh_Resume.pdf",
+  resume: "/resumne/Bhairav_Singh_Resume.pdf",
 
   skills: [
     "SAP CPI",

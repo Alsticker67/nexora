@@ -10,7 +10,7 @@ export const personal = {
     "Passionate about building seamless enterprise integrations using SAP Integration Suite (CPI), SAP PI/PO, SAP BTP, REST APIs, SOAP services, and cloud technologies.",
 
   // Contact
-  email: "yourmail@gmail.com",
+  email: "alphaeagle200@gmail.com",
   phone: "+91-9876543210",
   location: "India",
 

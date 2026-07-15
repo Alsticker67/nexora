@@ -28,6 +28,21 @@ export default function Button({
   );
 
   if (href) {
+    // External website or PDF
+    if (href.startsWith("http") || href.endsWith(".pdf")) {
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles}
+        >
+          {children}
+        </a>
+      );
+    }
+
+    // Internal navigation
     return (
       <Link href={href} className={styles}>
         {children}
@@ -35,5 +50,9 @@ export default function Button({
     );
   }
 
-  return <button className={styles}>{children}</button>;
+  return (
+    <button type="button" className={styles}>
+      {children}
+    </button>
+  );
 }
