@@ -6,7 +6,7 @@ type Props = {
 
 export default function Card({ children }: Props) {
   return (
-    <div className="rounded-3xl border border-slate-800 bg-slate-900/50 p-8 backdrop-blur-xl transition hover:border-cyan-500">
+    <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 backdrop-blur-xl transition hover:border-emerald-500">
       {children}
     </div>
   );

@@ -32,21 +32,21 @@ export const experience = [
     location: "Remote",
 
     description:
-      "Completed SAP Integration Suite learning journey and hands-on integration projects.",
+      "Built and maintained full-stack web applications end to end — responsive React front-ends backed by Node.js REST APIs.",
 
     achievements: [
-      "Built SAP CPI integration scenarios using adapters and mappings.",
-      "Practiced API development and enterprise integration patterns.",
-      "Worked with XML, JSON and Groovy scripting.",
+      "Developed responsive user interfaces with React, HTML and CSS.",
+      "Built and consumed REST APIs using Node.js and MongoDB.",
+      "Collaborated using Git and applied clean, reusable component patterns.",
     ],
 
     skills: [
-      "SAP CPI",
-      "SAP PI/PO",
-      "Groovy",
-      "REST API",
-      "XML",
-      "JSON",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "HTML & CSS",
+      "MongoDB",
+      "Git",
     ],
   },
 ];

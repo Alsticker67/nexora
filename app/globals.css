@@ -1,13 +1,39 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------ */
+/*  Design tokens — Tailwind v4 reads these to generate utilities      */
+/*  (font-sans / font-display / font-mono). The --font-* vars are set  */
+/*  on <html> by next/font in app/layout.tsx.                          */
+/* ------------------------------------------------------------------ */
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-bricolage), var(--font-inter), ui-sans-serif, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
 html {
   scroll-behavior: smooth;
+  /* Unified deep base — matches the Hero/About/Skills sections so any gap
+     between sections reads as the same colour instead of flashing lighter. */
+  background: #0a0b0d;
 }
 
 body {
-  background: #020617;
-  color: white;
+  background: #0a0b0d;
+  color: #e5e7eb;
   overflow-x: hidden;
+  /* Body copy = Inter; crisper text rendering across platforms. */
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Headings = Bricolage Grotesque (display) so titles carry real character
+   next to the Inter body copy. Applied globally so every section stays
+   consistent without touching each component. */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
 }
 
 * {
@@ -16,4 +42,57 @@ body {
 
 section {
   scroll-margin-top: 90px;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Global polish                                                      */
+/* ------------------------------------------------------------------ */
+
+/* Text selection picks up the emerald brand accent. */
+::selection {
+  background: rgba(16, 185, 129, 0.30);
+  color: #ffffff;
+}
+
+/* Keyboard focus ring — visible for tab users, invisible for mouse clicks. */
+:focus-visible {
+  outline: 2px solid rgba(16, 185, 129, 0.85);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Custom scrollbar to match the dark theme (WebKit + Firefox). */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #27272a #0a0b0d;
+}
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0b0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border: 3px solid #0a0b0d;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Respect users who prefer reduced motion — kill long/looping animations. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

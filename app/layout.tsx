@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Inter, Bricolage_Grotesque, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
+/* Body copy — clean, highly legible sans. */
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
 
-const manrope = Manrope({
+/* Display / headings — a characterful modern grotesk with real personality,
+ * so titles read as designed rather than default-system. */
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-bricolage",
+});
+
+/* Monospace — used for code, labels, and technical eyebrows. A crafted mono
+ * beats the platform default and reinforces the engineering theme. */
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
 });
 
 export const metadata: Metadata = {
@@ -37,9 +47,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${manrope.variable}`}
+      className={`${inter.variable} ${bricolage.variable} ${jetbrains.variable}`}
     >
-      <body>{children}</body>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }
