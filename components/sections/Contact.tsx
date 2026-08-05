@@ -51,7 +51,7 @@ const CHANNELS = [
     value: personal.email,
     href: `mailto:${personal.email}`,
     Icon: Mail,
-    tile: "bg-emerald-500/10 text-emerald-300 ring-emerald-400/20 group-hover:bg-emerald-500/20",
+    tile: "bg-sky-500/10 text-sky-300 ring-sky-400/20 group-hover:bg-sky-500/20",
     external: false,
   },
   {
@@ -60,7 +60,7 @@ const CHANNELS = [
     value: personal.phone,
     href: `tel:${personal.phone.replace(/\s/g, "")}`,
     Icon: Phone,
-    tile: "bg-emerald-500/10 text-emerald-300 ring-emerald-400/20 group-hover:bg-emerald-500/20",
+    tile: "bg-sky-500/10 text-sky-300 ring-sky-400/20 group-hover:bg-sky-500/20",
     external: false,
   },
   {
@@ -69,7 +69,7 @@ const CHANNELS = [
     value: personal.linkedin.replace(/^https?:\/\/(www\.)?/, ""),
     href: personal.linkedin,
     Icon: LinkedInIcon,
-    tile: "bg-teal-500/10 text-teal-300 ring-teal-400/20 group-hover:bg-teal-500/20",
+    tile: "bg-sky-500/10 text-sky-300 ring-sky-400/20 group-hover:bg-sky-500/20",
     external: true,
   },
   {
@@ -78,7 +78,7 @@ const CHANNELS = [
     value: personal.github.replace(/^https?:\/\/(www\.)?/, ""),
     href: personal.github,
     Icon: GitHubIcon,
-    tile: "bg-emerald-500/10 text-emerald-300 ring-emerald-400/20 group-hover:bg-emerald-500/20",
+    tile: "bg-sky-500/10 text-sky-300 ring-sky-400/20 group-hover:bg-sky-500/20",
     external: true,
   },
   {
@@ -87,7 +87,7 @@ const CHANNELS = [
     value: personal.location,
     href: null,
     Icon: MapPin,
-    tile: "bg-emerald-500/10 text-emerald-300 ring-emerald-400/20 group-hover:bg-emerald-500/20",
+    tile: "bg-sky-500/10 text-sky-300 ring-sky-400/20 group-hover:bg-sky-500/20",
     external: false,
   },
 ] as const;
@@ -145,7 +145,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-[#0a0b0d] py-20 md:py-28">
+    <section id="contact" className="py-20 md:py-28">
       <Container>
 
         <SectionHeading
@@ -163,10 +163,10 @@ export default function Contact() {
 
               {/* Availability */}
               {personal.available && (
-                <span className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-medium text-emerald-300">
+                <span className="inline-flex w-fit items-center gap-2 rounded-full border border-sky-400/30 bg-sky-500/10 px-3.5 py-1.5 text-xs font-medium text-sky-300">
                   <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-400" />
                   </span>
                   Available for new opportunities
                 </span>
@@ -194,7 +194,7 @@ export default function Contact() {
                         <p className="font-mono text-[11px] uppercase tracking-widest text-zinc-500">
                           {label}
                         </p>
-                        <p className="truncate text-sm font-medium text-zinc-50 transition-colors duration-300 group-hover:text-emerald-300">
+                        <p className="truncate text-sm font-medium text-zinc-50 transition-colors duration-300 group-hover:text-sky-300">
                           {value}
                         </p>
                       </div>
@@ -211,7 +211,7 @@ export default function Contact() {
                       {...(external
                         ? { target: "_blank", rel: "noopener noreferrer" }
                         : {})}
-                      className={`${shared} hover:-translate-y-0.5 hover:border-emerald-400/50`}
+                      className={`${shared} hover:-translate-y-0.5 hover:border-sky-400/50`}
                     >
                       {inner}
                     </a>
@@ -225,7 +225,7 @@ export default function Contact() {
 
               {/* Response time */}
               <div className="mt-auto flex items-center gap-2.5 pt-8 text-sm text-zinc-500">
-                <Clock size={15} className="text-emerald-400/70" />
+                <Clock size={15} className="text-sky-400/70" />
                 Typical response time — within 24 hours.
               </div>
 
@@ -242,8 +242,8 @@ export default function Contact() {
               </p>
 
               {status === "success" ? (
-                <div className="mt-8 flex flex-1 flex-col items-center justify-center rounded-2xl border border-emerald-400/25 bg-emerald-500/[0.06] p-10 text-center">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-300">
+                <div className="mt-8 flex flex-1 flex-col items-center justify-center rounded-2xl border border-sky-400/25 bg-sky-500/[0.06] p-10 text-center">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-sky-500/15 text-sky-300">
                     <CheckCircle2 size={30} />
                   </div>
                   <h4 className="mt-5 text-xl font-bold text-zinc-50">
@@ -256,7 +256,7 @@ export default function Contact() {
                   <button
                     type="button"
                     onClick={() => setStatus("idle")}
-                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-400 transition-transform duration-300 hover:translate-x-0.5"
+                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-sky-400 transition-transform duration-300 hover:translate-x-0.5"
                   >
                     Send another
                     <ArrowRight size={15} />
@@ -332,9 +332,9 @@ export default function Contact() {
                     disabled={status === "submitting"}
                     className="
                       inline-flex w-full items-center justify-center gap-2 rounded-xl
-                      bg-emerald-500 px-6 py-4 font-semibold text-zinc-950
+                      bg-sky-500 px-6 py-4 font-semibold text-zinc-950
                       transition-all duration-300
-                      hover:bg-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.35)]
+                      hover:bg-sky-400 hover:shadow-[0_0_25px_rgba(56,189,248,0.35)]
                       disabled:cursor-not-allowed disabled:opacity-70
                     "
                   >
@@ -366,7 +366,7 @@ export default function Contact() {
 
 /* Shared input styling. */
 const inputClass =
-  "w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3.5 text-zinc-50 placeholder:text-zinc-600 outline-none transition-colors duration-300 focus:border-emerald-400";
+  "w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3.5 text-zinc-50 placeholder:text-zinc-600 outline-none transition-colors duration-300 focus:border-sky-400";
 
 function Field({
   label,

@@ -48,15 +48,15 @@ section {
 /*  Global polish                                                      */
 /* ------------------------------------------------------------------ */
 
-/* Text selection picks up the emerald brand accent. */
+/* Text selection picks up the sky brand accent. */
 ::selection {
-  background: rgba(16, 185, 129, 0.30);
+  background: rgba(56, 189, 248, 0.28);
   color: #ffffff;
 }
 
 /* Keyboard focus ring — visible for tab users, invisible for mouse clicks. */
 :focus-visible {
-  outline: 2px solid rgba(16, 185, 129, 0.85);
+  outline: 2px solid rgba(56, 189, 248, 0.85);
   outline-offset: 2px;
   border-radius: 4px;
 }

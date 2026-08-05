@@ -43,10 +43,10 @@ function TypingText() {
   const word = typingWords[wordIndex % typingWords.length];
 
   return (
-    <span className="font-mono text-lg text-emerald-400 md:text-xl">
+    <span className="font-mono text-lg text-sky-400 md:text-xl">
       <span className="text-zinc-500">&gt; </span>
       {word.slice(0, len)}
-      <span className="ml-0.5 inline-block h-5 w-[2px] translate-y-1 animate-pulse bg-emerald-400" />
+      <span className="ml-0.5 inline-block h-5 w-[2px] translate-y-1 animate-pulse bg-sky-400" />
     </span>
   );
 }
@@ -56,16 +56,19 @@ function TypingText() {
 /* ------------------------------------------------------------------ */
 type Seg = { t: string; c?: string };
 
-/* A small, on-brand editor palette. Distinct hues (keyword / class / function
- * / string / variable / punctuation) so the snippet reads like real syntax
- * highlighting instead of a flat block of one green. */
-const KW = "text-teal-300"; // keywords: import, def, new, return
-const TYPE = "text-yellow-200"; // classes / types
-const FN = "text-emerald-300"; // function + method names
-const STR = "text-lime-300"; // string literals
-const VAR = "text-zinc-200"; // identifiers / variables
-const PUNC = "text-zinc-500"; // brackets, operators, punctuation
-const DIM = "text-zinc-400"; // import paths
+/* A real editor palette — VS Code's "Dark+" theme, the colouring most
+ * people recognise instantly: purple control keywords, blue storage
+ * keywords, teal types, soft-yellow functions, salmon strings and
+ * light-blue identifiers. Full multi-hue syntax highlighting, not a
+ * single accent — exactly what VS Code / Sublime show. */
+const KW = "text-[#c586c0]"; // control keywords: import, new, return (purple)
+const ST = "text-[#569cd6]"; // storage / declaration: def (blue)
+const TYPE = "text-[#4ec9b0]"; // classes / types (teal)
+const FN = "text-[#dcdcaa]"; // function + method names (soft yellow)
+const STR = "text-[#ce9178]"; // string literals (salmon)
+const VAR = "text-[#9cdcfe]"; // identifiers / variables (light blue)
+const PUNC = "text-[#d4d4d4]"; // brackets, operators, punctuation (near-white)
+const DIM = "text-[#858585]"; // import module paths (muted grey)
 
 const codeLines: Seg[][] = [
   [
@@ -80,7 +83,7 @@ const codeLines: Seg[][] = [
   ],
   [],
   [
-    { t: "def", c: KW },
+    { t: "def", c: ST },
     { t: " Message", c: TYPE },
     { t: " processData", c: FN },
     { t: "(", c: PUNC },
@@ -89,7 +92,7 @@ const codeLines: Seg[][] = [
     { t: ") {", c: PUNC },
   ],
   [
-    { t: "  def", c: KW },
+    { t: "  def", c: ST },
     { t: " body ", c: VAR },
     { t: "= ", c: PUNC },
     { t: "message", c: VAR },
@@ -99,7 +102,7 @@ const codeLines: Seg[][] = [
     { t: ")", c: PUNC },
   ],
   [
-    { t: "  def", c: KW },
+    { t: "  def", c: ST },
     { t: " order ", c: VAR },
     { t: "= ", c: PUNC },
     { t: "new", c: KW },
@@ -163,15 +166,15 @@ function CodeTerminal() {
   }
 
   return (
-    <div className="w-full max-w-lg overflow-hidden rounded-2xl border border-emerald-500/20 bg-zinc-950/80 shadow-[0_0_60px_rgba(16,185,129,0.15)] backdrop-blur-xl">
+    <div className="w-full max-w-lg overflow-hidden rounded-2xl border border-sky-500/20 bg-zinc-950/80 shadow-[0_0_60px_rgba(56,189,248,0.15)] backdrop-blur-xl">
       <div className="flex items-center gap-2 border-b border-white/5 bg-zinc-900/60 px-4 py-3">
         <span className="h-3 w-3 rounded-full bg-red-400/80" />
         <span className="h-3 w-3 rounded-full bg-yellow-400/80" />
-        <span className="h-3 w-3 rounded-full bg-green-400/80" />
+        <span className="h-3 w-3 rounded-full bg-sky-400/80" />
         <span className="ml-3 font-mono text-xs text-zinc-400">
           OrderEnrichment.groovy
         </span>
-        <span className="ml-auto rounded-md border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-emerald-300">
+        <span className="ml-auto rounded-md border border-sky-500/20 bg-sky-500/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-sky-300">
           SAP CPI
         </span>
       </div>
@@ -206,7 +209,7 @@ function CodeTerminal() {
                   })
                 )}
                 {i === activeIndex && (
-                  <span className="ml-0.5 inline-block h-4 w-2 translate-y-[2px] animate-pulse bg-emerald-400" />
+                  <span className="ml-0.5 inline-block h-4 w-2 translate-y-[2px] animate-pulse bg-sky-400" />
                 )}
               </span>
             </div>
@@ -216,7 +219,7 @@ function CodeTerminal() {
 
       <div className="flex items-center justify-between border-t border-white/5 bg-zinc-900/60 px-4 py-2.5 font-mono text-[11px] text-zinc-500">
         <span className="flex items-center gap-2">
-          <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
+          <span className="h-2 w-2 rounded-full bg-sky-400 animate-pulse" />
           Deployed to SAP Integration Suite
         </span>
         <span>UTF-8 · LF</span>
@@ -230,7 +233,7 @@ function CodeTerminal() {
 /* ------------------------------------------------------------------ */
 function Pill({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-zinc-900/60 px-4 py-1.5 text-xs font-medium text-zinc-300 backdrop-blur">
+    <span className="inline-flex items-center gap-2 rounded-full border border-sky-400/20 bg-zinc-900/60 px-4 py-1.5 text-xs font-medium text-zinc-300 backdrop-blur">
       {children}
     </span>
   );
@@ -252,9 +255,9 @@ function FloatChip({
     <motion.span
       animate={{ y: [0, -10, 0] }}
       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay }}
-      className={`absolute z-20 hidden items-center gap-2 rounded-xl border border-emerald-400/25 bg-zinc-950/80 px-3.5 py-2 font-mono text-xs text-emerald-200 shadow-[0_10px_30px_rgba(16,185,129,0.2)] backdrop-blur-md lg:flex ${className}`}
+      className={`absolute z-20 hidden items-center gap-2 rounded-xl border border-sky-400/25 bg-zinc-950/80 px-3.5 py-2 font-mono text-xs text-sky-200 shadow-[0_10px_30px_rgba(56,189,248,0.2)] backdrop-blur-md lg:flex ${className}`}
     >
-      <span className="h-1.5 w-1.5 rounded-full bg-teal-400" />
+      <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
       {label}
     </motion.span>
   );
@@ -262,26 +265,20 @@ function FloatChip({
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#0a0b0d] pt-24 pb-20 md:pb-28">
-      {/* Background Grid */}
-      <div
-        className="
-          absolute inset-0 opacity-[0.05]
-          [background-image:linear-gradient(rgba(16,185,129,0.15)_1px,transparent_1px),linear-gradient(to_right,rgba(16,185,129,0.15)_1px,transparent_1px)]
-          [background-size:70px_70px]
-        "
-      />
+    <section className="relative min-h-screen overflow-hidden pt-24 pb-20 md:pb-28">
+      {/* Grid lives on the shared SiteBackground now so it runs unbroken down
+          the whole page instead of restarting here. */}
 
       {/* Glows — slow breathing pulse for ambient motion */}
       <motion.div
         animate={{ opacity: [0.4, 0.75, 0.4], scale: [1, 1.08, 1] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -left-40 top-20 h-[600px] w-[600px] rounded-full bg-emerald-500/10 blur-[180px]"
+        className="absolute -left-40 top-20 h-[600px] w-[600px] rounded-full bg-sky-500/10 blur-[180px]"
       />
       <motion.div
         animate={{ opacity: [0.5, 0.85, 0.5], scale: [1.05, 1, 1.05] }}
         transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute -right-40 bottom-0 h-[600px] w-[600px] rounded-full bg-teal-500/10 blur-[180px]"
+        className="absolute -right-40 bottom-0 h-[600px] w-[600px] rounded-full bg-sky-500/10 blur-[180px]"
       />
 
       {/* Fine film grain — a premium texture that lifts the flat dark base. */}
@@ -290,7 +287,7 @@ export default function Hero() {
       />
 
       <Container>
-        <div className="relative z-10 grid min-h-[82vh] items-center gap-12 py-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+        <div className="relative z-10 grid min-h-[82vh] grid-cols-1 items-center gap-12 py-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
 
           {/* ---------------- Left ---------------- */}
           <motion.div
@@ -302,7 +299,7 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
               {personal.available && (
                 <Pill>
-                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="h-2 w-2 rounded-full bg-sky-400 animate-pulse" />
                   Available for opportunities
                 </Pill>
               )}
@@ -319,7 +316,7 @@ export default function Hero() {
 
             {/* Role — crafted mono label */}
             <div className="mt-6 flex items-center gap-3 text-zinc-300">
-              <span className="h-px w-10 bg-emerald-400/60" />
+              <span className="h-px w-10 bg-sky-400/60" />
               <span className="font-mono text-sm font-medium uppercase tracking-[0.2em]">
                 SAP Integration Developer
               </span>
@@ -360,28 +357,28 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="relative flex justify-center lg:justify-end"
+            className="relative flex min-w-0 justify-center lg:justify-end"
           >
             {/* Floating tech chips that drift beside the terminal (kept clear of the card) */}
             <FloatChip label="Groovy" className="-left-3 top-[52%]" delay={0} />
             <FloatChip label="OData · REST" className="-right-3 bottom-14" delay={1.2} />
 
-            <div className="w-full max-w-lg">
+            <div className="w-full min-w-0 max-w-lg">
               {/* Editor context bar — sets the scene above the terminal
                   without repeating the name/role shown on the left. */}
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="mb-4 flex items-center justify-between rounded-xl border border-emerald-500/15 bg-zinc-950/60 px-4 py-3 backdrop-blur-xl"
+                className="mb-4 flex items-center justify-between rounded-xl border border-sky-500/15 bg-zinc-950/60 px-4 py-3 backdrop-blur-xl"
               >
                 <span className="flex items-center gap-2.5 font-mono text-xs text-zinc-400">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-500/15 font-bold text-emerald-300">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-md bg-sky-500/15 font-bold text-sky-300">
                     {">_"}
                   </span>
                   ~/sap-cpi/iflows
                 </span>
-                <span className="flex items-center gap-1.5 font-mono text-[11px] text-emerald-300">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="flex items-center gap-1.5 font-mono text-[11px] text-sky-300">
+                  <span className="h-1.5 w-1.5 rounded-full bg-sky-400 animate-pulse" />
                   live
                 </span>
               </motion.div>

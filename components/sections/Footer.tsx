@@ -49,11 +49,11 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[#070809]">
       {/* Violet→fuchsia hairline riding the top edge */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-500/70 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-500/70 to-transparent" />
       {/* Ambient glow anchored top-centre */}
-      <div className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[820px] -translate-x-1/2 rounded-full bg-emerald-600/10 blur-[130px]" />
+      <div className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[820px] -translate-x-1/2 rounded-full bg-sky-600/10 blur-[130px]" />
       {/* Faint grid texture */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:linear-gradient(rgba(16,185,129,0.4)_1px,transparent_1px),linear-gradient(to_right,rgba(16,185,129,0.4)_1px,transparent_1px)] [background-size:56px_56px]" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:linear-gradient(rgba(56,189,248,0.4)_1px,transparent_1px),linear-gradient(to_right,rgba(56,189,248,0.4)_1px,transparent_1px)] [background-size:56px_56px]" />
 
       <Container className="relative">
 
@@ -62,15 +62,15 @@ export default function Footer() {
           <div className="flex flex-col gap-10 py-16 md:py-20 lg:flex-row lg:items-end lg:justify-between">
 
             <div className="max-w-xl">
-              <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-emerald-400">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-sky-400">
+                <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
                 Let&apos;s connect
               </p>
 
               <h2 className="mt-5 text-4xl font-black leading-[1.05] tracking-tight text-zinc-50 md:text-6xl">
                 Have a project
                 <br />
-                <span className="bg-gradient-to-r from-emerald-300 to-teal-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-sky-300 to-sky-500 bg-clip-text text-transparent">
                   in mind?
                 </span>
               </h2>
@@ -84,7 +84,7 @@ export default function Footer() {
             <div className="flex flex-col items-start gap-6 lg:items-end">
               <Link
                 href="#contact"
-                className="group inline-flex items-center gap-3 rounded-2xl bg-emerald-400 px-7 py-4 text-sm font-semibold text-zinc-950 transition-all duration-300 hover:-translate-y-1 hover:bg-emerald-300 hover:shadow-[0_15px_40px_rgba(16,185,129,0.4)]"
+                className="group inline-flex items-center gap-3 rounded-2xl bg-sky-400 px-7 py-4 text-sm font-semibold text-zinc-950 transition-all duration-300 hover:-translate-y-1 hover:bg-sky-300 hover:shadow-[0_15px_40px_rgba(56,189,248,0.4)]"
               >
                 Start a conversation
                 <ArrowUpRight
@@ -100,7 +100,7 @@ export default function Footer() {
                     href={href}
                     aria-label={label}
                     {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-zinc-400 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/60 hover:bg-emerald-500/10 hover:text-emerald-300"
+                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-zinc-400 transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/60 hover:bg-sky-500/10 hover:text-sky-300"
                   >
                     <Icon />
                   </a>
@@ -118,7 +118,7 @@ export default function Footer() {
           <div className="max-w-sm">
             <h3 className="text-2xl font-black tracking-wide">
               <span className="text-zinc-50">{personal.firstName}</span>{" "}
-              <span className="bg-gradient-to-r from-emerald-300 to-teal-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-300 to-sky-500 bg-clip-text text-transparent">
                 {personal.lastName}
               </span>
             </h3>
@@ -128,14 +128,14 @@ export default function Footer() {
             </p>
 
             <span className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
               Based in {personal.location}
             </span>
           </div>
 
           {/* Navigate */}
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-emerald-400">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-sky-400">
               Navigate
             </p>
             <nav className="mt-5 grid grid-cols-2 gap-x-8 gap-y-3">
@@ -145,7 +145,7 @@ export default function Footer() {
                   href={item.href}
                   className="group inline-flex w-fit items-center gap-2 text-sm text-zinc-400 transition-colors hover:text-zinc-50"
                 >
-                  <span className="h-1 w-1 rounded-full bg-zinc-600 transition-colors group-hover:bg-emerald-400" />
+                  <span className="h-1 w-1 rounded-full bg-zinc-600 transition-colors group-hover:bg-sky-400" />
                   {item.name}
                 </Link>
               ))}
@@ -154,18 +154,18 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-emerald-400">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-sky-400">
               Get in touch
             </p>
             <a
               href={`mailto:${personal.email}`}
-              className="mt-5 block text-sm text-zinc-300 transition-colors hover:text-emerald-300"
+              className="mt-5 block text-sm text-zinc-300 transition-colors hover:text-sky-300"
             >
               {personal.email}
             </a>
             <a
               href={`tel:${personal.phone.replace(/\s/g, "")}`}
-              className="mt-2 block text-sm text-zinc-400 transition-colors hover:text-emerald-300"
+              className="mt-2 block text-sm text-zinc-400 transition-colors hover:text-sky-300"
             >
               {personal.phone}
             </a>

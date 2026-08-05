@@ -40,10 +40,10 @@ function normalize(skill: Skill) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative overflow-hidden bg-[#0a0b0d] py-20 md:py-28">
+    <section id="skills" className="relative overflow-hidden py-20 md:py-28">
       {/* Ambient glows */}
-      <div className="absolute -left-40 top-24 h-[500px] w-[500px] rounded-full bg-emerald-500/10 blur-[160px]" />
-      <div className="absolute -right-40 bottom-10 h-[500px] w-[500px] rounded-full bg-teal-500/10 blur-[160px]" />
+      <div className="absolute -left-40 top-24 h-[500px] w-[500px] rounded-full bg-violet-500/10 blur-[160px]" />
+      <div className="absolute -right-40 bottom-10 h-[500px] w-[500px] rounded-full bg-violet-500/10 blur-[160px]" />
 
       <Container className="relative">
         {/* Header — shared section heading for a consistent site-wide look */}
@@ -52,6 +52,7 @@ export default function Skills() {
           title="The tools behind the"
           accent="integrations."
           description="The platforms, protocols and languages I reach for to design and deliver enterprise SAP integrations — alongside the modern web stack I build with."
+          tone="violet"
         />
 
         {/* Cards — flex-wrap + justify-center so the final short row
@@ -64,17 +65,17 @@ export default function Skills() {
                 key={category.title}
                 {...reveal}
                 transition={{ duration: 0.6, delay: (i % 3) * 0.1 }}
-                className="group relative flex w-full flex-col overflow-hidden rounded-3xl border border-white/5 bg-zinc-900/40 p-7 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-400/40 hover:shadow-2xl hover:shadow-emerald-500/10 sm:w-[calc(50%-0.75rem)] xl:w-[calc(33.333%-1rem)]"
+                className="group relative flex w-full flex-col overflow-hidden rounded-3xl border border-white/5 bg-zinc-900/40 p-7 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:border-violet-400/40 hover:shadow-2xl hover:shadow-violet-500/10 sm:w-[calc(50%-0.75rem)] xl:w-[calc(33.333%-1rem)]"
               >
                 {/* Accent bar reveals on hover */}
-                <span className="pointer-events-none absolute inset-x-0 top-0 h-px origin-center scale-x-0 bg-gradient-to-r from-transparent via-emerald-400 to-transparent transition-transform duration-500 group-hover:scale-x-100" />
+                <span className="pointer-events-none absolute inset-x-0 top-0 h-px origin-center scale-x-0 bg-gradient-to-r from-transparent via-violet-400 to-transparent transition-transform duration-500 group-hover:scale-x-100" />
 
                 {/* Header row: icon badge + index */}
                 <div className="flex items-center justify-between">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 text-zinc-950 shadow-lg shadow-emerald-500/20 transition-transform duration-300 group-hover:scale-110">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-400 to-violet-500 text-zinc-950 shadow-lg shadow-violet-500/20 transition-transform duration-300 group-hover:scale-110">
                     <Icon size={22} />
                   </span>
-                  <span className="font-mono text-2xl font-bold text-zinc-50/10 transition-colors duration-300 group-hover:text-emerald-400/30">
+                  <span className="font-mono text-2xl font-bold text-zinc-50/10 transition-colors duration-300 group-hover:text-violet-400/30">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
@@ -93,8 +94,8 @@ export default function Skills() {
                         key={label}
                         className={
                           featured
-                            ? "rounded-lg border border-emerald-400/40 bg-emerald-500/15 px-3 py-1.5 text-sm font-medium text-emerald-200 transition-colors duration-300 hover:bg-emerald-500/25"
-                            : "rounded-lg border border-white/5 bg-zinc-950/60 px-3 py-1.5 text-sm font-medium text-zinc-300 transition-all duration-300 hover:border-emerald-400/40 hover:text-emerald-300"
+                            ? "rounded-lg border border-violet-400/40 bg-violet-500/15 px-3 py-1.5 text-sm font-medium text-violet-200 transition-colors duration-300 hover:bg-violet-500/25"
+                            : "rounded-lg border border-white/5 bg-zinc-950/60 px-3 py-1.5 text-sm font-medium text-zinc-300 transition-all duration-300 hover:border-violet-400/40 hover:text-violet-300"
                         }
                       >
                         {label}

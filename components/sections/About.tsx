@@ -72,7 +72,7 @@ const reveal = {
 function Tag({ index, label }: { index: string; label: string }) {
   return (
     <p className="font-mono text-xs tracking-wide text-zinc-500">
-      <span className="text-emerald-400">// {index}</span> · {label}
+      <span className="text-cyan-400">// {index}</span> · {label}
     </p>
   );
 }
@@ -123,8 +123,8 @@ function StagePipeline({
         {stages.map((stage, si) => (
           <Fragment key={stage.label}>
             {/* Stage column */}
-            <div className="flex flex-1 flex-col rounded-2xl border border-emerald-400/15 bg-zinc-950/50 p-4">
-              <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.22em] text-emerald-400/70">
+            <div className="flex flex-1 flex-col rounded-2xl border border-cyan-400/15 bg-zinc-950/50 p-4">
+              <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-400/70">
                 {stage.label}
               </p>
               <div className="flex flex-1 flex-col justify-center gap-2.5">
@@ -133,9 +133,9 @@ function StagePipeline({
                   return (
                     <div
                       key={title}
-                      className="flex items-center gap-3 rounded-xl border border-white/5 bg-zinc-900/60 px-3 py-2.5 transition-colors duration-300 hover:border-emerald-400/40"
+                      className="flex items-center gap-3 rounded-xl border border-white/5 bg-zinc-900/60 px-3 py-2.5 transition-colors duration-300 hover:border-cyan-400/40"
                     >
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-emerald-400/30 bg-emerald-500/15 text-emerald-300">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-cyan-400/30 bg-cyan-500/15 text-cyan-300">
                         <Icon size={16} />
                       </span>
                       <div className="min-w-0">
@@ -162,7 +162,7 @@ function StagePipeline({
                   ease: "easeInOut",
                   delay: si * 0.35,
                 }}
-                className="flex shrink-0 items-center justify-center px-1 text-emerald-400"
+                className="flex shrink-0 items-center justify-center px-1 text-cyan-400"
               >
                 <ArrowRight size={22} className="hidden lg:block" />
                 <ArrowRight size={22} className="block rotate-90 lg:hidden" />
@@ -177,7 +177,7 @@ function StagePipeline({
         aria-hidden
         animate={{ x: ["-30%", "150%"] }}
         transition={{ duration: 3.4, repeat: Infinity, ease: "linear" }}
-        className="pointer-events-none absolute inset-y-0 z-20 w-24 -skew-x-12 bg-gradient-to-r from-transparent via-emerald-400/15 to-transparent"
+        className="pointer-events-none absolute inset-y-0 z-20 w-24 -skew-x-12 bg-gradient-to-r from-transparent via-cyan-400/15 to-transparent"
       />
     </div>
   );
@@ -204,7 +204,7 @@ function VerticalTimeline({
   return (
     <div className="relative mt-6">
       {/* Spine — runs through the centre of the icon column (h-11 → 22px) */}
-      <span className="pointer-events-none absolute bottom-3 left-[21px] top-3 w-px bg-gradient-to-b from-emerald-400/40 via-emerald-400/20 to-transparent" />
+      <span className="pointer-events-none absolute bottom-3 left-[21px] top-3 w-px bg-gradient-to-b from-cyan-400/40 via-cyan-400/20 to-transparent" />
 
       <div className="flex flex-col gap-3">
         {steps.map(({ icon, title, sub }, i) => {
@@ -215,8 +215,8 @@ function VerticalTimeline({
               <span
                 className={`relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border transition-all duration-500 ${
                   isActive
-                    ? "scale-110 border-emerald-400/70 bg-emerald-500/20 text-emerald-200 shadow-[0_0_22px_rgba(16,185,129,0.3)]"
-                    : "border-emerald-400/20 bg-zinc-950 text-emerald-400"
+                    ? "scale-110 border-cyan-400/70 bg-cyan-500/20 text-cyan-200 shadow-[0_0_22px_rgba(34,211,238,0.3)]"
+                    : "border-cyan-400/20 bg-zinc-950 text-cyan-400"
                 }`}
               >
                 <Icon size={18} />
@@ -224,7 +224,7 @@ function VerticalTimeline({
               <div
                 className={`flex flex-1 items-center justify-between gap-3 rounded-xl border px-4 py-3 transition-colors duration-500 ${
                   isActive
-                    ? "border-emerald-400/40 bg-emerald-500/[0.06]"
+                    ? "border-cyan-400/40 bg-cyan-500/[0.06]"
                     : "border-white/5 bg-zinc-950/50"
                 }`}
               >
@@ -267,9 +267,9 @@ function LiveFeed({ items }: { items: string[] }) {
           transition={{ duration: 0.35 }}
           className="flex w-full items-center gap-2 font-mono text-[11px]"
         >
-          <span className="text-emerald-400">▸</span>
+          <span className="text-cyan-400">▸</span>
           <span className="text-zinc-300">{items[i]}</span>
-          <span className="ml-auto flex items-center gap-1 text-emerald-400">
+          <span className="ml-auto flex items-center gap-1 text-cyan-400">
             <Check size={11} /> processed
           </span>
         </motion.div>
@@ -280,10 +280,10 @@ function LiveFeed({ items }: { items: string[] }) {
 
 export default function About() {
   return (
-    <section id="about" className="relative overflow-hidden bg-[#0a0b0d] py-20 md:py-28">
+    <section id="about" className="relative overflow-hidden py-20 md:py-28">
       {/* Glows */}
-      <div className="absolute -left-40 top-20 h-[500px] w-[500px] rounded-full bg-emerald-500/10 blur-[160px]" />
-      <div className="absolute -right-40 bottom-0 h-[500px] w-[500px] rounded-full bg-teal-500/10 blur-[160px]" />
+      <div className="absolute -left-40 top-20 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[160px]" />
+      <div className="absolute -right-40 bottom-0 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[160px]" />
 
       <Container>
         {/* Header — shared section heading for a consistent site-wide look */}
@@ -291,6 +291,7 @@ export default function About() {
           eyebrow={about.eyebrow}
           title={about.title.lead}
           accent={about.title.accent}
+          tone="cyan"
         />
 
         {/* Row 1 — Who I am + side cards */}
@@ -303,7 +304,7 @@ export default function About() {
           >
             <div className="mb-6 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-400/20 bg-emerald-500/10 text-emerald-400">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-500/10 text-cyan-400">
                   <Code2 size={20} />
                 </span>
                 <h3 className="text-xl font-bold text-zinc-50">Who I am</h3>
@@ -320,9 +321,9 @@ export default function About() {
                 return (
                   <span
                     key={label}
-                    className="inline-flex items-center gap-2 rounded-xl border border-white/5 bg-zinc-950/60 px-4 py-2 text-sm text-zinc-300 transition-colors hover:border-emerald-400/40 hover:text-emerald-300"
+                    className="inline-flex items-center gap-2 rounded-xl border border-white/5 bg-zinc-950/60 px-4 py-2 text-sm text-zinc-300 transition-colors hover:border-cyan-400/40 hover:text-cyan-300"
                   >
-                    <Icon size={16} className="text-emerald-400" />
+                    <Icon size={16} className="text-cyan-400" />
                     {label}
                   </span>
                 );
@@ -337,9 +338,9 @@ export default function About() {
               {about.strengths.map((s) => (
                 <span
                   key={s}
-                  className="inline-flex items-center gap-2 rounded-full border border-emerald-400/15 bg-emerald-500/5 px-3.5 py-1.5 text-sm text-zinc-300"
+                  className="inline-flex items-center gap-2 rounded-full border border-cyan-400/15 bg-cyan-500/5 px-3.5 py-1.5 text-sm text-zinc-300"
                 >
-                  <Check size={14} className="text-emerald-400" />
+                  <Check size={14} className="text-cyan-400" />
                   {s}
                 </span>
               ))}
@@ -358,7 +359,7 @@ export default function About() {
                 Currently at
               </p>
               <div className="mt-4 flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-emerald-400/20 bg-emerald-500/10 text-emerald-400">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-500/10 text-cyan-400">
                   <Briefcase size={20} />
                 </span>
                 <div>
@@ -375,11 +376,11 @@ export default function About() {
             {/* Certifications */}
             <div className="rounded-3xl border border-white/5 bg-zinc-900/40 p-6 backdrop-blur">
               <div className="flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-emerald-400/20 bg-emerald-500/10 text-emerald-400">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-500/10 text-cyan-400">
                   <BadgeCheck size={20} />
                 </span>
                 <div>
-                  <p className="text-3xl font-black text-emerald-400">
+                  <p className="text-3xl font-black text-cyan-400">
                     <CountUp to={about.certifications.count} />
                   </p>
                   <p className="text-sm text-zinc-400">
@@ -390,7 +391,7 @@ export default function About() {
             </div>
 
             {/* Specialty */}
-            <div className="relative overflow-hidden rounded-3xl border border-emerald-400/20 bg-gradient-to-br from-emerald-500/10 to-transparent p-6 backdrop-blur">
+            <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-cyan-500/10 to-transparent p-6 backdrop-blur">
               <motion.div
                 aria-hidden
                 animate={{ x: ["-120%", "220%"] }}
@@ -400,17 +401,17 @@ export default function About() {
                   ease: "easeInOut",
                   repeatDelay: 1.2,
                 }}
-                className="pointer-events-none absolute inset-y-0 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-emerald-400/15 to-transparent"
+                className="pointer-events-none absolute inset-y-0 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-cyan-400/15 to-transparent"
               />
               <div className="relative flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-500/15 text-emerald-300">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/15 text-cyan-300">
                   <Zap size={20} />
                 </span>
                 <div>
                   <p className="text-lg font-bold text-zinc-50">
                     {about.specialty.title}
                   </p>
-                  <p className="text-sm text-emerald-300/80">
+                  <p className="text-sm text-cyan-300/80">
                     {about.specialty.subtitle}
                   </p>
                 </div>
@@ -426,14 +427,14 @@ export default function About() {
           className="relative mt-6 overflow-hidden rounded-3xl border border-white/5 bg-zinc-900/40 p-8 backdrop-blur"
         >
           {/* Corner ticks */}
-          <span className="pointer-events-none absolute left-4 top-4 h-3 w-3 border-l border-t border-emerald-400/30" />
-          <span className="pointer-events-none absolute right-4 top-4 h-3 w-3 border-r border-t border-emerald-400/30" />
-          <span className="pointer-events-none absolute bottom-4 left-4 h-3 w-3 border-b border-l border-emerald-400/30" />
-          <span className="pointer-events-none absolute bottom-4 right-4 h-3 w-3 border-b border-r border-emerald-400/30" />
+          <span className="pointer-events-none absolute left-4 top-4 h-3 w-3 border-l border-t border-cyan-400/30" />
+          <span className="pointer-events-none absolute right-4 top-4 h-3 w-3 border-r border-t border-cyan-400/30" />
+          <span className="pointer-events-none absolute bottom-4 left-4 h-3 w-3 border-b border-l border-cyan-400/30" />
+          <span className="pointer-events-none absolute bottom-4 right-4 h-3 w-3 border-b border-r border-cyan-400/30" />
 
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-400/20 bg-emerald-500/10 text-emerald-400">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-500/10 text-cyan-400">
                 <Activity size={20} />
               </span>
               <div>
@@ -443,8 +444,8 @@ export default function About() {
                 </h3>
               </div>
             </div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-500/5 px-4 py-1.5 text-sm text-emerald-300">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-500/5 px-4 py-1.5 text-sm text-cyan-300">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-400" />
               Streaming
             </span>
           </div>
@@ -461,7 +462,7 @@ export default function About() {
                 <h4 className="text-sm font-semibold text-zinc-50">
                   {about.monitor.architecture.title}
                 </h4>
-                <p className="font-mono text-[11px] text-emerald-400">
+                <p className="font-mono text-[11px] text-cyan-400">
                   ● online
                 </p>
               </div>
@@ -483,7 +484,7 @@ export default function About() {
         >
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-400/20 bg-emerald-500/10 text-emerald-400">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-500/10 text-cyan-400">
                 <ShieldCheck size={20} />
               </span>
               <div>
@@ -493,8 +494,8 @@ export default function About() {
                 </h3>
               </div>
             </div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-500/5 px-4 py-1.5 text-sm text-emerald-300">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-500/5 px-4 py-1.5 text-sm text-cyan-300">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-400" />
               Secure
             </span>
           </div>
@@ -513,17 +514,17 @@ export default function About() {
                 key={title}
                 {...reveal}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="group relative overflow-hidden rounded-3xl border border-white/5 bg-zinc-900/40 p-7 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-400/40 hover:shadow-2xl hover:shadow-emerald-500/10"
+                className="group relative overflow-hidden rounded-3xl border border-white/5 bg-zinc-900/40 p-7 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-400/40 hover:shadow-2xl hover:shadow-cyan-500/10"
               >
                 {/* Accent bar reveals on hover */}
-                <span className="pointer-events-none absolute inset-x-0 top-0 h-px origin-center scale-x-0 bg-gradient-to-r from-transparent via-emerald-400 to-transparent transition-transform duration-500 group-hover:scale-x-100" />
+                <span className="pointer-events-none absolute inset-x-0 top-0 h-px origin-center scale-x-0 bg-gradient-to-r from-transparent via-cyan-400 to-transparent transition-transform duration-500 group-hover:scale-x-100" />
 
                 {/* Icon + label */}
                 <div className="relative flex items-center justify-between">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-emerald-400/20 bg-emerald-500/10 text-emerald-400 transition-all duration-300 group-hover:scale-110 group-hover:border-emerald-400/50 group-hover:bg-emerald-500/20">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-500/10 text-cyan-400 transition-all duration-300 group-hover:scale-110 group-hover:border-cyan-400/50 group-hover:bg-cyan-500/20">
                     <Icon size={22} />
                   </span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-emerald-400/70">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-400/70">
                     {label}
                   </span>
                 </div>
@@ -541,7 +542,7 @@ export default function About() {
                   {tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full border border-white/5 bg-zinc-950/60 px-3 py-1 font-mono text-[11px] text-zinc-400 transition-colors group-hover:border-emerald-400/20 group-hover:text-emerald-300/80"
+                      className="rounded-full border border-white/5 bg-zinc-950/60 px-3 py-1 font-mono text-[11px] text-zinc-400 transition-colors group-hover:border-cyan-400/20 group-hover:text-cyan-300/80"
                     >
                       {t}
                     </span>

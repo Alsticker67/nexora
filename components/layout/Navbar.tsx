@@ -90,7 +90,7 @@ export default function Navbar() {
               className="text-3xl font-black tracking-wide"
             >
               <span className="text-zinc-50">Ne</span>
-              <span className="text-emerald-400">xora</span>
+              <span className="text-sky-400">xora</span>
             </Link>
 
             {/* Desktop Menu */}
@@ -103,15 +103,15 @@ export default function Navbar() {
                     href={item.href}
                     className={`relative text-sm font-medium transition-colors duration-300 ${
                       isActive
-                        ? "text-emerald-400"
-                        : "text-zinc-300 hover:text-emerald-400"
+                        ? "text-sky-400"
+                        : "text-zinc-300 hover:text-sky-400"
                     }`}
                   >
                     {item.label}
                     {isActive && (
                       <motion.span
                         layoutId="nav-active"
-                        className="absolute -bottom-1.5 left-0 h-0.5 w-full rounded-full bg-emerald-400"
+                        className="absolute -bottom-1.5 left-0 h-0.5 w-full rounded-full bg-sky-400"
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
                     )}
@@ -160,8 +160,8 @@ export default function Navbar() {
                         onClick={() => setOpen(false)}
                         className={`text-base transition-colors duration-300 ${
                           active === item.href
-                            ? "font-semibold text-emerald-400"
-                            : "text-zinc-300 hover:text-emerald-400"
+                            ? "font-semibold text-sky-400"
+                            : "text-zinc-300 hover:text-sky-400"
                         }`}
                       >
                         {item.label}
@@ -181,7 +181,7 @@ export default function Navbar() {
         {/* Reading-progress bar pinned to the bottom edge of the bar. */}
         <motion.div
           style={{ scaleX: progress }}
-          className="absolute bottom-0 left-0 h-0.5 w-full origin-left bg-gradient-to-r from-emerald-400 to-teal-500"
+          className="absolute bottom-0 left-0 h-0.5 w-full origin-left bg-gradient-to-r from-sky-400 to-sky-500"
         />
       </div>
     </header>

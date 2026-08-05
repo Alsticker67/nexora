@@ -32,15 +32,15 @@ export default function Button({
     active:translate-y-0
     focus-visible:outline-none
     focus-visible:ring-2
-    focus-visible:ring-emerald-400
+    focus-visible:ring-sky-400
     focus-visible:ring-offset-2
     focus-visible:ring-offset-zinc-950
     `,
     {
-      "bg-emerald-400 text-zinc-950 shadow-[0_10px_30px_rgba(16,185,129,0.35)] hover:bg-emerald-300 hover:shadow-[0_15px_35px_rgba(16,185,129,0.45)]":
+      "bg-gradient-to-br from-sky-400 to-cyan-400 text-zinc-950 shadow-[0_8px_24px_rgba(56,189,248,0.25)] hover:from-sky-300 hover:to-cyan-300 hover:shadow-[0_12px_32px_rgba(56,189,248,0.38)]":
         variant === "primary",
 
-      "border border-emerald-400/30 bg-zinc-900/70 text-zinc-50 backdrop-blur hover:border-emerald-400 hover:bg-zinc-800":
+      "border border-sky-400/30 bg-zinc-900/70 text-zinc-50 backdrop-blur hover:border-sky-400 hover:bg-zinc-800":
         variant === "secondary",
     },
     className

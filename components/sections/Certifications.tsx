@@ -22,14 +22,14 @@ const CERT_ICONS = {
   database: Database,
 } as const;
 
-/* Each credential gets its own accent so the grid reads as a colourful set
- * instead of four identical tiles — a warm amber→orange→gold trio plus
- * one emerald pop for contrast. */
+/* Each credential gets its own accent so the grid reads as a set instead of
+ * four identical tiles — a cohesive cool quartet (sky / cyan / indigo / blue)
+ * that stays on-palette rather than a warm rainbow. */
 const CERT_ICON_STYLES = {
-  shield: "bg-emerald-500/10 text-emerald-300 ring-emerald-400/20 group-hover:bg-emerald-500/20",
-  sparkles: "bg-teal-500/10 text-teal-300 ring-teal-400/20 group-hover:bg-teal-500/20",
-  cloud: "bg-yellow-500/10 text-yellow-300 ring-yellow-400/20 group-hover:bg-yellow-500/20",
-  database: "bg-emerald-500/10 text-emerald-300 ring-emerald-400/20 group-hover:bg-emerald-500/20",
+  shield: "bg-amber-500/10 text-amber-300 ring-amber-400/20 group-hover:bg-amber-500/20",
+  sparkles: "bg-cyan-500/10 text-cyan-300 ring-cyan-400/20 group-hover:bg-cyan-500/20",
+  cloud: "bg-indigo-500/10 text-indigo-300 ring-indigo-400/20 group-hover:bg-indigo-500/20",
+  database: "bg-blue-500/10 text-blue-300 ring-blue-400/20 group-hover:bg-blue-500/20",
 } as const;
 
 export default function Certifications() {
@@ -37,7 +37,7 @@ export default function Certifications() {
   const rest = certifications.filter((c) => c !== featured);
 
   return (
-    <section id="certifications" className="bg-[#0a0b0d] py-20 md:py-28">
+    <section id="certifications" className="py-20 md:py-28">
       <Container>
 
         <SectionHeading
@@ -45,6 +45,7 @@ export default function Certifications() {
           title="Globally credentialed."
           accent="Industry recognized."
           description="SAP and IBM certifications backed by a Microsoft cloud credential — plus recognition for consistently delivering integration work that ships."
+          tone="amber"
         />
 
         <div className="space-y-6">
@@ -77,24 +78,24 @@ function FeaturedCard({ cert }: { cert: Certification }) {
     <Reveal variant="up">
       <article
         className="
-          group relative overflow-hidden rounded-3xl border border-emerald-400/25
-          bg-gradient-to-br from-emerald-500/10 via-zinc-900 to-zinc-900 p-8 md:p-10
-          transition-colors duration-300 hover:border-emerald-400/60
+          group relative overflow-hidden rounded-3xl border border-amber-400/25
+          bg-gradient-to-br from-amber-500/10 via-zinc-900 to-zinc-900 p-8 md:p-10
+          transition-colors duration-300 hover:border-amber-400/60
         "
       >
         {/* soft corner glow */}
-        <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-emerald-400/10 blur-3xl transition-opacity duration-500 group-hover:opacity-90" />
+        <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-amber-400/10 blur-3xl transition-opacity duration-500 group-hover:opacity-90" />
 
         <div className="relative flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
 
           {/* Icon tile */}
-          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 text-zinc-950 shadow-lg shadow-emerald-500/25">
+          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-amber-500 text-zinc-950 shadow-lg shadow-amber-500/25">
             <Icon size={30} />
           </div>
 
           <div className="flex-1">
-            <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-emerald-400">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-amber-400">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
               Spotlight
             </p>
 
@@ -103,7 +104,7 @@ function FeaturedCard({ cert }: { cert: Certification }) {
             </h3>
 
             <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-zinc-400">
-              <span className="font-semibold text-emerald-300">{cert.issuer}</span>
+              <span className="font-semibold text-amber-300">{cert.issuer}</span>
               {cert.issued && (
                 <>
                   <span className="text-zinc-600">•</span>
@@ -119,7 +120,7 @@ function FeaturedCard({ cert }: { cert: Certification }) {
             )}
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-300">
                 <BadgeCheck size={14} />
                 Verified Credential
               </span>
@@ -130,9 +131,9 @@ function FeaturedCard({ cert }: { cert: Certification }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    inline-flex items-center gap-1.5 rounded-full bg-emerald-400 px-4 py-1.5
+                    inline-flex items-center gap-1.5 rounded-full bg-amber-400 px-4 py-1.5
                     text-xs font-semibold text-zinc-950 transition-all duration-300
-                    hover:bg-emerald-300 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]
+                    hover:bg-amber-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.4)]
                   "
                 >
                   View Credential
@@ -158,8 +159,8 @@ function CertCard({ cert }: { cert: Certification }) {
       className="
         group flex h-full flex-col rounded-3xl border border-zinc-800 bg-zinc-900 p-7
         transition-all duration-300
-        hover:-translate-y-1.5 hover:border-emerald-400/60
-        hover:shadow-[0_20px_50px_rgba(16,185,129,0.12)]
+        hover:-translate-y-1.5 hover:border-amber-400/60
+        hover:shadow-[0_20px_50px_rgba(251,191,36,0.12)]
       "
     >
       {/* Icon tile + badge */}
@@ -179,12 +180,12 @@ function CertCard({ cert }: { cert: Certification }) {
 
       {/* Title — min-height reserves 2 lines so single- and double-line
           titles produce the same block height and every divider aligns. */}
-      <h3 className="mt-5 flex min-h-[3.25rem] items-start text-lg font-bold leading-snug text-zinc-50 transition-colors duration-300 group-hover:text-emerald-400">
+      <h3 className="mt-5 flex min-h-[3.25rem] items-start text-lg font-bold leading-snug text-zinc-50 transition-colors duration-300 group-hover:text-amber-400">
         {cert.title}
       </h3>
 
       <p className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-zinc-400">
-        <span className="font-medium text-emerald-300/90">{cert.issuer}</span>
+        <span className="font-medium text-amber-300/90">{cert.issuer}</span>
         {cert.issued && (
           <>
             <span className="text-zinc-600">•</span>
@@ -197,7 +198,7 @@ function CertCard({ cert }: { cert: Certification }) {
           label on every card so all footers line up perfectly. */}
       <div className="mt-auto flex items-center justify-between border-t border-zinc-800 pt-5">
         <span className="flex items-center gap-1.5 text-xs text-zinc-500">
-          <BadgeCheck size={14} className="text-emerald-400/70" />
+          <BadgeCheck size={14} className="text-amber-400/70" />
           Verified Credential
         </span>
 
@@ -206,7 +207,7 @@ function CertCard({ cert }: { cert: Certification }) {
             href={cert.credentialUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-emerald-400 transition-transform duration-300 group-hover:translate-x-0.5"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-amber-400 transition-transform duration-300 group-hover:translate-x-0.5"
           >
             View
             <ExternalLink size={14} />

@@ -6,15 +6,15 @@ import Container from "@/components/ui/Container";
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-[#0a0b0d] py-20 md:py-28">
+    <section id="experience" className="py-20 md:py-28">
       <Container>
 
         {/* Heading */}
-        <SectionHeading eyebrow="Experience" title="Professional" accent="Journey" />
+        <SectionHeading eyebrow="Experience" title="Professional" accent="Journey" tone="blue" />
 
 
         {/* Timeline — single left rail, cards stacked down the right */}
-        <div className="relative border-l-2 border-emerald-500/30 pl-8 md:pl-10">
+        <div className="relative border-l-2 border-blue-500/30 pl-8 md:pl-10">
 
           {experience.map((item, i) => (
 
@@ -23,8 +23,8 @@ export default function Experience() {
 
               {/* Timeline node */}
               <span className="absolute -left-[41px] top-7 z-10 flex h-5 w-5 items-center justify-center md:-left-[49px]">
-                <span className="absolute h-5 w-5 rounded-full bg-emerald-400/30" />
-                <span className="h-3 w-3 rounded-full border-2 border-zinc-950 bg-emerald-400 shadow-[0_0_16px_rgba(16,185,129,0.9)]" />
+                <span className="absolute h-5 w-5 rounded-full bg-blue-400/30" />
+                <span className="h-3 w-3 rounded-full border-2 border-zinc-950 bg-blue-400 shadow-[0_0_16px_rgba(96,165,250,0.9)]" />
               </span>
 
 
@@ -33,13 +33,13 @@ export default function Experience() {
                 className="
                   rounded-3xl border border-zinc-800 bg-zinc-900 p-7 md:p-8
                   transition-all duration-300
-                  hover:-translate-y-1 hover:border-emerald-400/60
-                  hover:shadow-[0_20px_50px_rgba(16,185,129,0.12)]
+                  hover:-translate-y-1 hover:border-blue-400/60
+                  hover:shadow-[0_20px_50px_rgba(96,165,250,0.12)]
                 "
               >
 
                 {/* Date eyebrow */}
-                <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-emerald-400">
+                <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-blue-400">
                   <Calendar size={13} />
                   {item.duration}
                 </div>
@@ -53,7 +53,7 @@ export default function Experience() {
                       {item.role}
                     </h3>
 
-                    <span className="mt-2 flex items-center gap-2 font-medium text-emerald-400">
+                    <span className="mt-2 flex items-center gap-2 font-medium text-blue-400">
                       <Building2 size={16} />
                       {item.company}
                     </span>
@@ -83,7 +83,7 @@ export default function Experience() {
                       >
                         <CircleDot
                           size={16}
-                          className="mt-1 shrink-0 text-emerald-400/70"
+                          className="mt-1 shrink-0 text-blue-400/70"
                         />
                         <span>{achievement}</span>
                       </li>
@@ -97,7 +97,7 @@ export default function Experience() {
                   {item.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-1.5 text-sm font-medium text-emerald-300"
+                      className="rounded-full border border-blue-500/20 bg-blue-500/10 px-3.5 py-1.5 text-sm font-medium text-blue-300"
                     >
                       {skill}
                     </span>

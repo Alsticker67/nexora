@@ -220,7 +220,7 @@ function Code() {
       <line x1="60" y1="58" x2="340" y2="58" stroke="#27272a" strokeWidth="2" />
       <circle cx="74" cy="49" r="3.5" fill="#f87171" />
       <circle cx="86" cy="49" r="3.5" fill="#fbbf24" />
-      <circle cx="98" cy="49" r="3.5" fill="#34d399" />
+      <circle cx="98" cy="49" r="3.5" fill="#38bdf8" />
       {lines.map((l, i) => (
         <motion.rect
           key={l.y}
@@ -252,7 +252,7 @@ function Api() {
             cx="322"
             cy={y + 13}
             r="6"
-            fill="#34d399"
+            fill="#38bdf8"
             initial={{ opacity: 0.3 }}
             animate={{ opacity: [0.3, 1, 0.3] }}
             transition={loop(2, i * 0.4)}
