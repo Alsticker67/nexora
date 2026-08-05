@@ -22,15 +22,14 @@ export const personal = {
   // ==========================
 
   email: "alphaeagle200@gmail.com",
-  phone: "+91-9876543210",
   location: "India",
 
   // ==========================
   // Social
   // ==========================
 
-  github: "https://github.com/Bhairav",
-  linkedin: "https://linkedin.com/in/your-linkedin-profile",
+  github: "https://github.com/Alsticker67",
+  linkedin: "https://www.linkedin.com/in/bhairav-singh-9917a224b/",
 
   // ==========================
   // Resume

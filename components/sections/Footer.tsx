@@ -163,12 +163,6 @@ export default function Footer() {
             >
               {personal.email}
             </a>
-            <a
-              href={`tel:${personal.phone.replace(/\s/g, "")}`}
-              className="mt-2 block text-sm text-zinc-400 transition-colors hover:text-sky-300"
-            >
-              {personal.phone}
-            </a>
           </div>
         </div>
 

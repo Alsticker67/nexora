@@ -8,7 +8,6 @@ import {
   Loader2,
   Mail,
   MapPin,
-  Phone,
   Send,
   AlertCircle,
 } from "lucide-react";
@@ -51,15 +50,6 @@ const CHANNELS = [
     value: personal.email,
     href: `mailto:${personal.email}`,
     Icon: Mail,
-    tile: "bg-sky-500/10 text-sky-300 ring-sky-400/20 group-hover:bg-sky-500/20",
-    external: false,
-  },
-  {
-    key: "phone",
-    label: "Phone",
-    value: personal.phone,
-    href: `tel:${personal.phone.replace(/\s/g, "")}`,
-    Icon: Phone,
     tile: "bg-sky-500/10 text-sky-300 ring-sky-400/20 group-hover:bg-sky-500/20",
     external: false,
   },
