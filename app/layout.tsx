@@ -23,19 +23,29 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  // Base URL so the code-generated OG image (app/opengraph-image.tsx) and icon
+  // (app/icon.tsx) resolve to absolute URLs when the link is shared.
+  metadataBase: new URL("https://bhairav-portfolio.vercel.app"),
+
   title: "Bhairav Singh | SAP Integration Developer",
   description:
     "Portfolio of Bhairav Singh - SAP Integration Suite (CPI), SAP PI/PO, SAP BTP, REST APIs, Groovy, Enterprise Integration Developer.",
 
-  icons: {
-    icon: "/favicon.png",
-  },
-
+  // Icon + Open Graph / Twitter images are supplied by the file conventions
+  // app/icon.tsx and app/opengraph-image.tsx — Next injects the tags for us.
   openGraph: {
+    type: "website",
+    url: "https://bhairav-portfolio.vercel.app",
     title: "Bhairav Singh | SAP Integration Developer",
     description:
       "SAP Integration Developer Portfolio built with Next.js, TypeScript and Tailwind CSS.",
-    images: ["/og-image.png"],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Bhairav Singh | SAP Integration Developer",
+    description:
+      "SAP Integration Developer Portfolio built with Next.js, TypeScript and Tailwind CSS.",
   },
 };
 
