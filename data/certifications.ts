@@ -26,7 +26,7 @@ export const certifications: Certification[] = [
     issuer: "SAP · IBM",
     issued: "Jul 2023",
     credentialUrl:
-      "https://training.sap.com/certification/verify-certification/?certId=YOUR_CERT_ID",
+      "https://www.credly.com/badges/500bdeaa-7a04-4c27-8426-f827f667b5f7/public_url",
     icon: "shield",
     badge: "Global",
     featured: true,
@@ -37,7 +37,8 @@ export const certifications: Certification[] = [
     title: "IBM Generative AI",
     issuer: "IBM",
     issued: "Oct 2023",
-    credentialUrl: "https://www.ibm.com/credentials/your-cert-id",
+    credentialUrl:
+      "https://www.credly.com/badges/4b166f1d-414d-4163-983c-7e2dc0b2cd9c/public_url",
     icon: "sparkles",
     badge: "IBM",
   },
