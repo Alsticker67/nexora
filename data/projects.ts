@@ -45,7 +45,7 @@ export const projects: Project[] = [
     tag: "SAP CPI · Monitoring",
     status: "Enterprise",
     tech: ["SAP CPI", "SAP BTP", "React", "REST API"],
-    demo: "https://sap-integration-dashboard.vercel.app/",
+    internal: true,
   },
   {
     title: "Enterprise Integration Platform",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     tag: "SAP PI/PO · Architecture",
     status: "Enterprise",
     tech: ["SAP PI/PO", "SAP CPI", "SOAP", "OData"],
-    demo: "https://enterprise-integration-platform.vercel.app/",
+    internal: true,
   },
 
   /* ── Added below. These are internal/NDA SAP projects, so they show an
