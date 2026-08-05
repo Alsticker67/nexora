@@ -45,7 +45,6 @@ export const projects: Project[] = [
     tag: "SAP CPI · Monitoring",
     status: "Enterprise",
     tech: ["SAP CPI", "SAP BTP", "React", "REST API"],
-    github: "https://github.com/Bhairav/sap-integration-dashboard",
     demo: "https://sap-integration-dashboard.vercel.app/",
   },
   {
@@ -57,7 +56,6 @@ export const projects: Project[] = [
     tag: "SAP PI/PO · Architecture",
     status: "Enterprise",
     tech: ["SAP PI/PO", "SAP CPI", "SOAP", "OData"],
-    github: "https://github.com/Bhairav/enterprise-integration-platform",
     demo: "https://enterprise-integration-platform.vercel.app/",
   },
 
@@ -110,8 +108,8 @@ export const projects: Project[] = [
     tag: "Next.js · Frontend",
     status: "Live",
     tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "TypeScript"],
-    github: "https://github.com/Bhairav/portfolio",
-    demo: "https://your-domain.com",
+    github: "https://github.com/Alsticker67/nexora",
+    demo: "https://bhairav-portfolio.vercel.app",
   },
 ];
 
