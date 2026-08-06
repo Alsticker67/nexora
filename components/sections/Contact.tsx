@@ -145,10 +145,10 @@ export default function Contact() {
           description="Enterprise integrations, SAP solutions, cloud apps, or an exciting opportunity — send a message and it lands straight in my inbox. I read every one."
         />
 
-        <div className="grid gap-8 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
 
           {/* ── Left: contact details ── */}
-          <Reveal variant="left" className="lg:col-span-2">
+          <Reveal variant="left" className="min-w-0 lg:col-span-2">
             <div className="flex h-full flex-col rounded-3xl border border-zinc-800 bg-zinc-900 p-8 md:p-9">
 
               {/* Availability */}
@@ -223,7 +223,7 @@ export default function Contact() {
           </Reveal>
 
           {/* ── Right: message form ── */}
-          <Reveal variant="right" className="lg:col-span-3">
+          <Reveal variant="right" className="min-w-0 lg:col-span-3">
             <div className="relative flex h-full flex-col rounded-3xl border border-zinc-800 bg-zinc-900 p-8 md:p-9">
 
               <h3 className="text-2xl font-bold text-zinc-50">Send a message</h3>
